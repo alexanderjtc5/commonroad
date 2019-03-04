@@ -8,8 +8,16 @@ file_path = os.path.join(os.getcwd(), 'scenarios/NGSIM/Lankershim/USA_Lanker-1_1
 
 scenario, planning_problem_set = CommonRoadFileReader(file_path).open()
 
-plt.figure(figsize=(25, 10))
+plt.figure(num=1,figsize=(25, 10))
 draw_object(scenario)
+draw_object(planning_problem_set)
+plt.gca().set_aspect('equal')
+
+
+draw_parameters = {'time_begin': 11}
+
+plt.figure(num=2,figsize=(25, 10))
+draw_object(scenario, draw_params=draw_parameters)
 draw_object(planning_problem_set)
 plt.gca().set_aspect('equal')
 plt.show()
